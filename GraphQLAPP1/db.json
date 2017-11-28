@@ -14,12 +14,12 @@
     },
     {
       "id": "46",
-      "firstName": "George",
+      "firstName": "Spenmon",
       "age": 28,
-      "companyId": 1
+      "companyId": "1"
     }
   ],
-  "companies" :[
+  "companies": [
     {
       "id": "1",
       "name": "Apple",
