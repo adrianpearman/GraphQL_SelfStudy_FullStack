@@ -8,6 +8,7 @@ query FindSong($id: ID!){
     lyrics{
       id
       content
+      likes
     }
   }
 }

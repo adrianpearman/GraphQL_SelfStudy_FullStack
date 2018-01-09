@@ -9,7 +9,11 @@ import App from './components/App';
 import SongCreate from './components/SongCreate';
 import SongDetail from './components/SongDetail';
 
-const client = new ApolloClient({})
+const client = new ApolloClient({
+  // this configuration takes all the data from the backend
+  // and resulting id from each piece of data is used to identify it
+  dataIdFromObject: o => o.id
+})
 
 const Root = () => {
   return (
