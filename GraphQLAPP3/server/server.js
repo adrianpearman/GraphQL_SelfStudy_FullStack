@@ -8,13 +8,15 @@ const webpack = require('webpack')
 const webpackMiddleware = require('webpack-dev-middleware')
 
 const models = require('./models')
-const schema = require('./schema/auth')
+const schema = require('./schema/schema')
 const passportConfig = require('./services/auth')
 const webpackConfig = require('../webpack.config.js')
 
+// Creating an express application
+const app = express();
+
 // URI for Database
 const MONGO_URL = '';
-const app = express();
 
 // Connecting to mongoDB. Error and Success handling.
 mongoose.Promise = global.Promise

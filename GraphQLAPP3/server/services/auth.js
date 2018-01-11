@@ -51,12 +51,14 @@ function signUp({ email: password, req}) {
 
 // Logs in a user.  This will invoke the 'local-strategy' defined above in this file. Notice the strange method signature here: the 'passport.authenticate' function returns a function, as its indended to be used as a middleware with Express.  We have another compatibility layer here to make it work nicely with GraphQL, as GraphQL always expects to see a promise for handling async code.
 function logIn({ email, password, req }){
-    return new Promise(resolve, reject) => {
-        passport.authenticate('local', (err, user) => {
-            if (!user) { rject('Invalid credentials')}
-            reg.login(user, () => resolve(user))
-        })({ body: { email, password }})
-    }
+    return new Promise((resolve, reject) => {
+      passport.authenticate("local", (err, user) => {
+        if (!user) {
+          reject("Invalid credentials");
+        }
+        req.login(user, () => resolve(user));
+      })({ body: { email, password } });
+    });
 }
 
 module.exports = { signUp, logIn}
